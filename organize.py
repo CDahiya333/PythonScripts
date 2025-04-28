@@ -5,8 +5,9 @@ from pathlib import Path
 import schedule
 import time
 import tempfile
+import sys
 
-
+print("Using Python executable:", sys.executable)
 print(tempfile.gettempdir())
 os.environ['TMPDIR'] = os.path.expanduser('~/custom_temp')
 tempfile.tempdir = os.environ['TMPDIR']
