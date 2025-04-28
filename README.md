@@ -6,7 +6,8 @@ A collection of utility Python scripts. Currently includes:
 - `imgCompressor.py`: Smartly compresses images in your computer also specific handling for folderName = `Resume` where it creates separate img versions for`<0.5mb, <1mb, <2mb, original`
 Also for creatives out there it checks for folderName = `footage` and makes sure not to touch since we need the highest quality when we need to edit for future creatives.
 - Yes I didn't forget my Editor friend's out there.🤩
-More scripts will be added soon. This repository supports cross-platform automation on **macOS**, **Windows**, and **Linux**.
+- More scripts will be added soon.
+- This repository supports cross-platform automation on **macOS**, **Windows**, and **Linux**.
 
 ---
 
