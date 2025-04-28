@@ -3,18 +3,27 @@
 A collection of utility Python scripts. Currently includes:
 
 - `organise.py`: Automatically organizes files in a directory based on file type.
-
+- `imgCompressor.py`: Smartly compresses images in your computer also specific handling for folderName = `Resume` where it creates separate img versions for`<0.5mb, <1mb, <2mb, original`
+Also for creatives out there it checks for folderName = `footage` and makes sure not to touch since we need the highest quality when we need to edit for future creatives.
+- Yes I didn't forget my Editor friend's out there.🤩
 More scripts will be added soon. This repository supports cross-platform automation on **macOS**, **Windows**, and **Linux**.
 
 ---
 
 ## 📂 Scripts Overview
 
-| Script Name   | Description                            |
-|--------------|----------------------------------------|
-| organise.py  | Organizes files by type into folders.  |
+| Script Name      | Description                           |
+| ---------------- | ------------------------------------- |
+| organise.py      | Organizes files by type into folders. |
+| imgCompressor.py | Smartly compresses img's in your mac. |
 
 ---
+
+## Note
+
+- This current approach for `imgCompressor` utilizes a `tracking_db.json` which essentially creates a local database for checking whether a file has been already optimzed because we don't want to iteratively degrade our image's quality every iteration.
+- This approach makes use of MD5 hashing ensuring that until unless the image was edited explicity it will not be considered for a re-optimize. And will not fail for a image-rename or location-move from one place to Another.
+- So in the event you want to get rid of the original files make sure not to delete `image_optimizer.log` and `tracking_db.json` file otherwise you guessed it our script will not find the database hence everything will be queued for a re-optimization.
 
 ## 🚀 Running the Scripts Automatically
 
@@ -152,13 +161,13 @@ In addition to native schedulers, you can also consider these:
 
 ## ⚠️ Common Points of Failure
 
-| Issue                         | Solution                                                                 |
-|------------------------------|--------------------------------------------------------------------------|
-| Permission denied            | Ensure scripts have execution rights (`chmod +x`).                       |
-| Not running at scheduled time| Double-check scheduler setup and time zones.                            |
-| Python not found             | Use absolute path to Python binary.                                      |
-| Script not triggering        | Check logs (`/tmp/*.log` or custom paths).                               |
-| Environment errors           | Activate virtual environment or fix `PATH`.                              |
+| Issue                              | Solution                                                                             |
+| ---------------------------------- | ------------------------------------------------------------------------------------ |
+| Permission denied                  | Ensure scripts have execution rights (`chmod +x`).                                   |
+| Not running at scheduled time      | Double-check scheduler setup and time zones.                                         |
+| Python not found                   | Use absolute path to Python binary.                                                  |
+| Script not triggering              | Check logs (`/tmp/*.log` or custom paths).                                           |
+| Environment errors                 | Activate virtual environment or fix `PATH`.                                          |
 | Launchctl: Operation not permitted | Add full disk access in **System Settings → Privacy & Security → Full Disk Access**. |
 
 ---
