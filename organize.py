@@ -50,9 +50,9 @@ def organizeFiles(path):
                 os.makedirs(other_path, exist_ok=True)
                 shutil.move(item_path, os.path.join(other_path, item))
 
-# Schedule the script to run every 10 minutes
+# Schedule the script to run every 24 hours
 for folder in FOLDERS_TO_WATCH:
-    schedule.every(10).minutes.do(organizeFiles, folder)
+    schedule.every(24).hours.do(organizeFiles, folder)
 
 
 # Run loop

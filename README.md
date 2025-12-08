@@ -13,10 +13,11 @@ Also for creatives out there it checks for folderName = `footage` and makes sure
 
 ## 📂 Scripts Overview
 
-| Script Name      | Description                           |
-| ---------------- | ------------------------------------- |
-| organise.py      | Organizes files by type into folders. |
-| imgCompressor.py | Smartly compresses img's in your mac. |
+| Script Name        | Description                                            |
+| ------------------ | ------------------------------------------------------ |
+| organise.py        | Organizes files by type into folders.                  |  
+| imgCompressor.py   | Smartly compresses img's in your mac.                  |
+| batchdownloader.py | Batch Download links from sites hosted on workers.dev  |
 
 ---
 
